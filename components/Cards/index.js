@@ -23,10 +23,10 @@ axios
     .then((res) => {
         console.log(res);
         const cardGetter = res.data.articles;
-        const cardDiv = document.createElement('div')
+        const cardDiv = document.createElement('div');
         cardGetter.forEach((card) => {
             cardsMain(cardGetter.author);
-            startingPoint.appendChild(cardDiv)
+            startingPoint.appendChild(card)
         })
 
         startingPoint.appendChild(cardDiv);

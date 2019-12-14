@@ -17,23 +17,27 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
-axios
-// requestOne = axios.get('https://lambda-times-backend.herokuapp.com/articles');
-    .get('https://lambda-times-backend.herokuapp.com/articles')
-    .then((res) => {
-        console.log(res);
-        const cardGetter = res.data.articles;
-        const cardDiv = document.createElement('div');
-        cardGetter.forEach((card) => {
-            cardsMain(cardGetter.author);
-            startingPoint.appendChild(card)
-        })
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+       
+    .then( res => {
+        
+        let obj = res.data.articles;             
+        var result = Object.entries(obj);  
+        let total = result.length; 
+        
+        for(let i=0; i<total; i++) {
+            
+            let finalArr = result[i][1];               
+            finalArr.forEach(article => {
+            cardsMain(article);
+            });
 
-        startingPoint.appendChild(cardDiv);
+        }
+        
     })
-    .catch((err) => {
-        console.log(err);
-    });
+    .catch( err => {
+        console.log("Error:", err);
+    })
 
 
 
@@ -61,10 +65,10 @@ axios
         auth.classList.add('author');
         imgContainer.classList.add('img-container');
 
-        headline.innerHTML = `${obj.headline}`;
-        imgSource.src = `${obj.authorPhoto}`
-        authorName.innerHTML = `${obj.authorName}`
+        headline.textContent = obj.headline;
+        imgSource.src =  obj.authorPhoto;
+        name.textContent = obj.authorName; 
         
+        startingPoint.appendChild(cardClass)
         return cardsMain
     }
-

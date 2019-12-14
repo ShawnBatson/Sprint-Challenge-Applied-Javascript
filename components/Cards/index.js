@@ -17,42 +17,47 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
-
-axios 
+axios
+// requestOne = axios.get('https://lambda-times-backend.herokuapp.com/articles');
     .get('https://lambda-times-backend.herokuapp.com/articles')
     .then((res) => {
         console.log(res);
-        const cardGetter = res.data.articles;
-
+        const cardGetter1 = res.data.articles.boostrap;
     })
     .catch((err) => {
         console.log(err);
-    })
+    });
+
+
+
+
 
 
     const startingPoint = document.querySelector('.cards-container');
 
-    function cardsMain () {
+    function cardsMain (obj) {
         const cardClass = document.createElement('div');
         const headline = document.createElement('div');
         const auth = document.createElement('div');
         const imgContainer = document.createElement('div');
         const imgSource = document.createElement('img')
-        const authorName = document.createElement('span');
+        const authorN = document.createElement('span');
 
         cardClass.appendChild(headline);
         cardClass.appendChild(auth);
         auth.appendChild(imgContainer);
         imgContainer.appendChild(imgSource);
-        auth.appendChild(authorName);
+        auth.appendChild(authorN);
 
         cardClass.classList.add('card');
         headline.classList.add('headline');
         auth.classList.add('author');
         imgContainer.classList.add('img-container');
 
-        headline.innerHTML = '${obj.headline}';
-        imgSource.src = ''
+        headline.innerHTML = `${obj.headline}`;
+        imgSource.src = `${obj.authorPhoto}`
+        authorName.innerHTML = `${obj.authorName}`
         
+        return cardsMain
     }
 

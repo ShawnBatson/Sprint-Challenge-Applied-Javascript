@@ -12,10 +12,12 @@ axios
     .then((res) => {
         console.log(res);
         const tabGetter = res.data.topics
+        const tabDiv = document.createElement('div')
         tabGetter.forEach((tab) => {
             const newTab = tabCreator(tab)
             tabSetter.appendChild(newTab);
         })
+        tabSetter.appendChild(tabDiv);
         
     })
     .catch((err) => {
@@ -27,24 +29,10 @@ axios
     function tabCreator (array) {
         const singleTab = document.createElement('div');
         
-        singleTab.textContent = `${array.topics}`;
-        singleTab.classList.add = 'tab';
+        singleTab.innerHTML = `${array}`;
+        console.log(array);
+        singleTab.classList.add('tab'); 
 
         return singleTab;
     }
 
-    // axios
-    // .get('https://lambda-times-backend.herokuapp.com/topics')
-    // .then((res) => {
-    //     console.log(res);
-    //     const tabGetter = res.data.topics
-    //     actualTab.textContent = `${res.data.topics}`
-    //     tabGetter.forEach((tab) => {
-    //         const newTab = tabCreator(tab)
-    //         tabSetter.appendChild(newTab);
-    //     })
-        
-    // })
-    // .catch((err) => {
-    //     console.log('err');
-    // });

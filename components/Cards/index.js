@@ -22,7 +22,14 @@ axios
     .get('https://lambda-times-backend.herokuapp.com/articles')
     .then((res) => {
         console.log(res);
-        const cardGetter1 = res.data.articles.boostrap;
+        const cardGetter = res.data.articles;
+        const cardDiv = document.createElement('div')
+        cardGetter.forEach((card) => {
+            cardsMain(cardGetter.author);
+            startingPoint.appendChild(cardDiv)
+        })
+
+        startingPoint.appendChild(cardDiv);
     })
     .catch((err) => {
         console.log(err);

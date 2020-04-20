@@ -30,28 +30,39 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+1A. This is the Document Object Model. It is an interface that is language neutral that allows multiple different languages and scripts to interact with the document dynamically.
+
 2. What is an event?
 
-3. What is an event listener?
+2A.  An event is something that the user will do to interact with the page. Like click, resize, or focus on a form.
 
-4. Why would we convert a NodeList into an Array?
+3. What is an event listener? 
+
+3A.  An event listener is an object and line of code that will wait for an Event to happen before that snippet of code activates, thus waiting and "listening" for the event to happen
+
+4. Why would we convert a NodeList into an Array? 
+
+4A. Because a NodeList is an array-like object, not an array, thereofre array methods cannot be used with them. Also, NodeLists are specifically browser related, not script/language related. 
 
 5. What is a component?
 
+5A.  A component is reusable behaviors that can be applied as a base to many different objects.
+
+
 ### Git Set up
 
-* [ ] Fork the project into your GitHub user account
-* [ ] Clone the forked project into a directory on your machine
-* [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
-* [ ] You are now ready to build this project with your preferred IDE
+* [ x] Fork the project into your GitHub user account
+* [ x] Clone the forked project into a directory on your machine
+* [ x] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
+* [ x] You are now ready to build this project with your preferred IDE
 
 ## Minimum Viable Product
 
 Your finished project must include all of the following requirements:
 
-* [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
+* [ x] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
 
-* [ ] Following the instructions in the `Header/index.js` file, create the Header component. 
+* [ x] Following the instructions in the `Header/index.js` file, create the Header component. 
 
 * [ ] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
 
